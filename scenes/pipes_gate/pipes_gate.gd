@@ -20,11 +20,9 @@ func _on_screen_exited():
 
 func _on_pipe_body_entered(body):
 	if body.is_in_group(GameManager.GROUP_PLAYER):
-		pass
+		body.game_over()
 
 
 func _on_laser_body_exited(body):
 	if body.is_in_group(GameManager.GROUP_PLAYER):
 		pass
-		#score = 1
-		#print("SCORE" + str(score))

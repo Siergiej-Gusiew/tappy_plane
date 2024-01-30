@@ -1,6 +1,9 @@
 extends CharacterBody2D
 
 
+signal on_plane_crushed
+
+
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
 
@@ -16,7 +19,8 @@ func _ready():
 func _physics_process(delta):
 	fly(delta)
 	move_and_slide()
-	game_over()
+	if is_on_floor():
+		game_over()
 	
 func fly(delta: float) -> void:
 	velocity.y += GRAVITY * delta
@@ -25,6 +29,6 @@ func fly(delta: float) -> void:
 		animation_player.play("power")
 
 func game_over() -> void:
-	if is_on_floor():
-		set_physics_process(false)
-		animated_sprite_2d.stop()
+	animated_sprite_2d.stop()
+	set_physics_process(false)
+	on_plane_crushed.emit()
