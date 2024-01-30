@@ -3,8 +3,6 @@ extends Node2D
 
 const SCROLL_SPEED: float = 120.0
 
-var score: int = 0
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -20,12 +18,13 @@ func _on_screen_exited():
 	queue_free()
 
 
-#func _on_pipe_body_entered(body):
-	#print(body)
-	#queue_free()
-#
-#
-#func _on_laser_body_exited(body):
-	#print(body)
-	#score += 1
-	#print("SCORE: {score}")
+func _on_pipe_body_entered(body):
+	if body.is_in_group(GameManager.GROUP_PLAYER):
+		pass
+
+
+func _on_laser_body_exited(body):
+	if body.is_in_group(GameManager.GROUP_PLAYER):
+		pass
+		#score = 1
+		#print("SCORE" + str(score))

@@ -2,6 +2,7 @@ extends Node2D
 
 var spawn_range_min = 225
 var spawn_range_max = 425
+var score: int = 0
 
 @export var pipes_scene: PackedScene
 

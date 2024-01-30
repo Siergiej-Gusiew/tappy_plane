@@ -39,6 +39,21 @@ animations = [{
 radius = 15.0
 height = 58.0
 
+[sub_resource type="Animation" id="Animation_t548v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
 [sub_resource type="Animation" id="Animation_yqcvx"]
 resource_name = "power"
 length = 0.3
@@ -55,28 +70,13 @@ tracks/0/keys = {
 "values": [0.0, -0.349066, 0.0]
 }
 
-[sub_resource type="Animation" id="Animation_t548v"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_vi5b7"]
 _data = {
 "RESET": SubResource("Animation_t548v"),
 "power": SubResource("Animation_yqcvx")
 }
 
-[node name="plane" type="CharacterBody2D"]
+[node name="plane" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_l1ysj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
