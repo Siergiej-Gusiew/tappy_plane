@@ -39,4 +39,5 @@ func _on_spawn_timer_timeout():
 
 func _on_plane_crushed():
 	stop_pipes()
+	print(ScoreManager._score, ScoreManager._high_score)
 	# TODO: paste here plane crush animation or scene!
