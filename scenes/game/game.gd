@@ -11,6 +11,8 @@ var score: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	SignalManager.on_plane_crushed.connect(_on_plane_crushed)
+	ScoreManager.set_score(0)
 	randomize()
 	spawn_pipes()
 
