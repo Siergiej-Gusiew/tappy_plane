@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://fjldx8rgiy4s"]
+[gd_scene load_steps=4 format=3 uid="uid://fjldx8rgiy4s"]
 
 [ext_resource type="LabelSettings" uid="uid://8yr5pnem6r62" path="res://assets/sh_48_white.tres" id="1_c07q7"]
 [ext_resource type="Script" path="res://scenes/game_over/game_over.gd" id="1_lwect"]
+[ext_resource type="AudioStream" uid="uid://ckwlgnajbc4mx" path="res://assets/audio/game_over.wav" id="3_8ii1r"]
 
 [node name="GameOver" type="Control"]
 layout_mode = 3
@@ -43,6 +44,9 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "PRESS SPACE"
 label_settings = ExtResource("1_c07q7")
+
+[node name="CrushSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_8ii1r")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0

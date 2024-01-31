@@ -4,6 +4,7 @@ extends Control
 @onready var game_over_label = $GameOverLabel
 @onready var space_label = $SpaceLabel
 @onready var timer = $Timer
+@onready var crush_sound = $CrushSound
 
 
 # Called when the node enters the scene tree for the first time.
@@ -25,6 +26,7 @@ func run_sequence() -> void:
 
 
 func _on_plane_crushed() -> void:
+	crush_sound.play()
 	show()
 	timer.start()
 

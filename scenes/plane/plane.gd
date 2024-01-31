@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 #signal on_plane_crushed
 
-
+@onready var engine_sound = $EngineSound
 @onready var animated_sprite_2d = $AnimatedSprite2D
 @onready var animation_player = $AnimationPlayer
 
@@ -30,6 +30,6 @@ func fly(delta: float) -> void:
 
 func game_over() -> void:
 	animated_sprite_2d.stop()
+	engine_sound.stop()
 	set_physics_process(false)
-	#on_plane_crushed.emit()
 	SignalManager.on_plane_crushed.emit()
