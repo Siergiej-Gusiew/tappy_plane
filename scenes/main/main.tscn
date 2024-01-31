@@ -1,0 +1,97 @@
+[gd_scene load_steps=6 format=3 uid="uid://dftjhl3ubkq2g"]
+
+[ext_resource type="Texture2D" uid="uid://c6klbobd2mi5e" path="res://assets/background/sky.png" id="1_a8evj"]
+[ext_resource type="LabelSettings" uid="uid://tp0803ydui76" path="res://assets/sh_72_title.tres" id="2_wxil2"]
+[ext_resource type="LabelSettings" uid="uid://cpw7paobx1o5p" path="res://assets/play_test.tres" id="3_wba7f"]
+
+[sub_resource type="Animation" id="Animation_f6gax"]
+resource_name = "flash_text"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/PressSpace:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.7, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dwy5r"]
+_data = {
+"flash_text": SubResource("Animation_f6gax")
+}
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_a8evj")
+expand_mode = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 24
+
+[node name="Title" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+text = "Tappy Plane"
+label_settings = ExtResource("2_wxil2")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PressSpace" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "Press Space
+to 
+Play"
+label_settings = ExtResource("3_wba7f")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HighScoreText" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
+text = "High Score"
+label_settings = ExtResource("3_wba7f")
+vertical_alignment = 1
+
+[node name="HighScoreNum" type="Label" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+text = "0000"
+label_settings = ExtResource("3_wba7f")
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_dwy5r")
+}
+autoplay = "flash_text"
