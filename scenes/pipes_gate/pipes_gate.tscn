@@ -23,7 +23,7 @@ position = Vector2(238, 0)
 [node name="ScoreSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("4_m17tk")
 
-[connection signal="body_exited" from="laser" to="." method="_on_laser_body_exited"]
+[connection signal="body_exited" from="laser" to="." method="_on_laser_body_entered"]
 [connection signal="body_entered" from="upper_pipe" to="." method="_on_pipe_body_entered"]
 [connection signal="body_entered" from="lower_pipe" to="." method="_on_pipe_body_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_screen_exited"]

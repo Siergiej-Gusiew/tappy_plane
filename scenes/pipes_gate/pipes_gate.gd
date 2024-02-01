@@ -22,7 +22,7 @@ func _on_pipe_body_entered(body):
 		body.game_over()
 
 
-func _on_laser_body_exited(body):
+func _on_laser_body_entered(body):
 	if body.is_in_group(GameManager.GROUP_PLAYER):
-		ScoreManager.increment_score()
 		score_sound.play()
+		ScoreManager.increment_score()

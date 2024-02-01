@@ -21,6 +21,10 @@ GameManager="*res://singletons/game_manager.gd"
 ScoreManager="*res://singletons/score_manager.gd"
 SignalManager="*res://singletons/signal_manager.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [input]
 
 fly={
