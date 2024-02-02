@@ -16,7 +16,8 @@ config/features=PackedStringArray("4.2", "GL Compatibility")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://assets/logo/DALL·E 2024-02-02 17.20.08 - A sleek and modern logo design for 'LostPixel Studios', featuring a minimalist aesthetic with a pixelated motif. The logo should incorporate shades of.png"
 boot_splash/fullsize=false
-config/icon="res://icon.svg"
+config/icon="res://assets/deploy_icon/deplooy_icon.png"
+config/windows_native_icon="res://assets/deploy_icon/icon_full_set.ico"
 boot_splash/minimum_display_time=4000
 
 [autoload]
